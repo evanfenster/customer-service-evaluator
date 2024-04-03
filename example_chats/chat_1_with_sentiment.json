@@ -1,0 +1,144 @@
+{
+    "session_id": "987654321",
+    "start_time": "2024-04-02T15:00:00Z",
+    "end_time": "2024-04-02T15:45:00Z",
+    "customer_id": "C54321",
+    "agent_id": "A12345",
+    "channel": "app",
+    "messages": [
+        {
+            "message_id": "1",
+            "timestamp": "2024-04-02T15:01:00Z",
+            "sender": "customer",
+            "text": "My service has been horrible lately!",
+            "sentiment": "negative"
+        },
+        {
+            "message_id": "2",
+            "timestamp": "2024-04-02T15:01:30Z",
+            "sender": "agent",
+            "text": "I'm sorry to hear that. Could you describe the issues you're facing?",
+            "sentiment": "neutral"
+        },
+        {
+            "message_id": "3",
+            "timestamp": "2024-04-02T15:02:00Z",
+            "sender": "customer",
+            "text": "My internet connection has been very slow for the past week.",
+            "sentiment": "negative"
+        },
+        {
+            "message_id": "4",
+            "timestamp": "2024-04-02T15:03:00Z",
+            "sender": "agent",
+            "text": "Got it. Let me check your account details.",
+            "sentiment": "neutral"
+        },
+        {
+            "message_id": "5",
+            "timestamp": "2024-04-02T15:05:00Z",
+            "sender": "agent",
+            "text": "Can you confirm if you've tried restarting your router?",
+            "sentiment": "neutral"
+        },
+        {
+            "message_id": "6",
+            "timestamp": "2024-04-02T15:11:00Z",
+            "sender": "customer",
+            "text": "Yes, I've tried that but it didn't help.",
+            "sentiment": "negative"
+        },
+        {
+            "message_id": "7",
+            "timestamp": "2024-04-02T15:12:00Z",
+            "sender": "agent",
+            "text": "I see. Let me run a diagnostic test on your connection.",
+            "sentiment": "neutral"
+        },
+        {
+            "message_id": "8",
+            "timestamp": "2024-04-02T15:13:00Z",
+            "sender": "customer",
+            "text": "Okay, thank you.",
+            "sentiment": "neutral"
+        },
+        {
+            "message_id": "9",
+            "timestamp": "2024-04-02T15:14:00Z",
+            "sender": "agent",
+            "text": "The test results show that there's an issue with your modem. We'll need to replace it.",
+            "sentiment": "negative"
+        },
+        {
+            "message_id": "10",
+            "timestamp": "2024-04-02T15:15:00Z",
+            "sender": "customer",
+            "text": "When can you send someone to replace it?",
+            "sentiment": "neutral"
+        },
+        {
+            "message_id": "11",
+            "timestamp": "2024-04-02T15:16:00Z",
+            "sender": "agent",
+            "text": "We can schedule a technician to visit your home in 2-3 weeks. Does that work for you?",
+            "sentiment": "neutral"
+        },
+        {
+            "message_id": "12",
+            "timestamp": "2024-04-02T15:17:00Z",
+            "sender": "customer",
+            "text": "That's way too long to wait. Can you expedite the process?",
+            "sentiment": "negative"
+        },
+        {
+            "message_id": "13",
+            "timestamp": "2024-04-02T15:18:00Z",
+            "sender": "agent",
+            "text": "I'll see what I can do to get a technician to you sooner. I'll follow up with you shortly.",
+            "sentiment": "neutral"
+        },
+        {
+            "message_id": "14",
+            "timestamp": "2024-04-02T15:19:00Z",
+            "sender": "customer",
+            "text": "Thank you for your help.",
+            "sentiment": "positive"
+        },
+        {
+            "message_id": "15",
+            "timestamp": "2024-04-02T15:20:00Z",
+            "sender": "agent",
+            "text": "After checking with our team, we can send a technician to your home next week. Is that acceptable?",
+            "sentiment": "neutral"
+        },
+        {
+            "message_id": "16",
+            "timestamp": "2024-04-02T15:21:00Z",
+            "sender": "customer",
+            "text": "Yes, that works for me. Thank you for expediting the process.",
+            "sentiment": "positive"
+        },
+        {
+            "message_id": "17",
+            "timestamp": "2024-04-02T15:22:00Z",
+            "sender": "agent",
+            "text": "You're welcome. If you have any other questions or concerns, feel free to reach out.",
+            "sentiment": "neutral"
+        },
+        {
+            "message_id": "18",
+            "timestamp": "2024-04-02T15:23:00Z",
+            "sender": "customer",
+            "text": "I will. Thanks again.",
+            "sentiment": "positive"
+        }
+    ],
+    "session_metadata": {
+        "rating": 5,
+        "tags": [
+            "service_issue",
+            "technical_support",
+            "resolved"
+        ]
+    }
+}
