@@ -79,6 +79,13 @@ const Dashboard = () => {
                   </Card>
                 </Col>
               </Row>
+              {analysisResults.chat_data && analysisResults.chat_data.messages && (
+              <Row>
+                <Col>
+                    <ChatView messages={analysisResults.chat_data.messages} />
+                </Col>
+              </Row>
+              )}
               <Row>
                 <Col>
                   <Card className="mb-4">
@@ -89,13 +96,6 @@ const Dashboard = () => {
                   </Card>
                 </Col>
               </Row>
-              {analysisResults.chat_data && analysisResults.chat_data.messages && (
-                <Row>
-                <Col>
-                    <ChatView messages={analysisResults.chat_data.messages} />
-                </Col>
-                </Row>
-            )}
             </Col>
           </Row>
           <Row>

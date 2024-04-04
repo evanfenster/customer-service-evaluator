@@ -80,7 +80,7 @@ def calculate_agent_score(chat):
         overall_score = (overall_score * 0.8) + (rating * 2 * 0.2)
 
     # Return all scores
-    return (response_time_score, customer_sentiment_score, agent_sentiment_score, overall_score)
+    return (response_time_score * 10, customer_sentiment_score * 10, agent_sentiment_score * 10, overall_score)
 
 @app.route('/analyze', methods=['POST'])
 def analyze_chat():
