@@ -14,9 +14,6 @@ const FileUpload = ({ onFileUpload }) => {
         <Form.Label>Upload Chat Log</Form.Label>
         <Form.Control type="file" onChange={handleFileChange} />
       </Form.Group>
-      <Button variant="primary">
-        Analyze
-      </Button>
     </Form>
   );
 };

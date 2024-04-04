@@ -1,9 +1,10 @@
 import React from 'react';
+import './Footer.css';
 
 const Footer = () => {
   return (
     <footer>
-      <p>Created by Evan Fenster</p>
+      Created by Evan Fenster
     </footer>
   );
 };
