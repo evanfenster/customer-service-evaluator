@@ -1,0 +1,27 @@
+/* Dashboard.css */
+.dashboard {
+    background-color: #f8f9fa;
+    padding: 2rem;
+  }
+  
+  .score-label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .score-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .feedback-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .feedback-list li {
+    margin-bottom: 0.5rem;
+  }
