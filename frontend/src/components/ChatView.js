@@ -17,9 +17,9 @@ const ChatView = ({ messages }) => {
   };
 
   return (
-    <Card>
+    <Card className="chat-card">
       <Card.Body>
-        <Card.Title>Chat History</Card.Title>
+        <Card.Title className="text-center mb-4">Chat History</Card.Title>
         <div className="chat-container">
           {messages.map((message, index) => (
             <div
@@ -28,7 +28,7 @@ const ChatView = ({ messages }) => {
             >
               <div className={`message-bubble ${getSentimentColor(message.sentiment)}`}>
                 <div className="message-text">{message.text}</div>
-                <div className="message-time">{new Date(message.timestamp).toLocaleTimeString()}</div>
+                <div className="message-time">{new Date(message.timestamp).toLocaleString()}</div>
               </div>
             </div>
           ))}

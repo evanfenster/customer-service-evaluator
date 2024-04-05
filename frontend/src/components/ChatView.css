@@ -1,63 +1,55 @@
+.chat-card {
+  height: 100%;
+}
+
 .chat-container {
-    max-height: 400px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 8px;
-    padding: 16px;
-  }
-  
-  .chat-message {
-    display: flex;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  .customer, .agent {
-    max-width: 70%;
-    word-wrap: break-word;
-  }
-  
-  .customer {
-    align-self: flex-start;
-  }
-  
-  .agent {
-    align-self: flex-end;
-  }
-  
-  .message-bubble {
-    border-radius: 16px;
-    padding: 8px 16px;
-    min-width: 10%;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    word-wrap: break-word;
-  }
-  
-  .message-text {
-    margin-bottom: 4px;
-    color: black;
-  }
-  
-  .message-time {
-    font-size: 12px;
-    color: black;
-    margin-top: auto;
-    align-self: flex-end;
-  }
-  
-  .red {
-    background-color: #ffcccb;
-  }
-  
-  .yellow {
-    background-color: #ffffcc;
-  }
-  
-  .green {
-    background-color: #c3e6cb;
-  }
-  
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.chat-message {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.customer {
+  justify-content: flex-end;
+}
+
+.agent {
+  justify-content: flex-start;
+}
+
+.message-bubble {
+  border-radius: 16px;
+  padding: 8px 16px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.message-text {
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.message-time {
+  font-size: 12px;
+  color: #777;
+}
+
+.red {
+  background-color: #ffcccb;
+}
+
+.yellow {
+  background-color: #ffffcc;
+}
+
+.green {
+  background-color: #c3e6cb;
+}

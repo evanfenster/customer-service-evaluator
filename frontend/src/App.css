@@ -2,17 +2,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 :root {
-  --primary-color: #070d29;
-  --secondary-color: #ffffff;
-  --text-color: #ffffff;
+  --primary-color: #ffffff;
+  --secondary-color: #7a91f3;
   --accent-color: #4CAF50;
-  --background-color: #000000;
+  --background-color: #ffffff;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background: linear-gradient(135deg, #000000, #000428, #004e92);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
   line-height: 1.6;
 }
 
@@ -41,7 +54,13 @@ p {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
-  padding: 1.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  max-width: 100%;
+}
+
+.card-body {
+  padding: 1rem;
 }
 
 .card-title {
