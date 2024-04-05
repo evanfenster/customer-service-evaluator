@@ -40,6 +40,13 @@ def get_sentiment(text):
         result = 'neutral'
     return result
 
+def get_feedback(chat):
+    """Get the feedback from the chat log and return it."""
+    global config, safety_config, model
+    prompt = "You are the head of a customer service department and you have received the following chat log. Please provide feedback on the agent's performance and the overall customer experience. Output your feedback in markdown format. Don't include titles or headers.\n\n" + json.dumps(chat, indent=2)
+    response = model.generate_content(prompt, generation_config=config, safety_settings=safety_config)
+    return response.text.strip()
+
 def append_sentiment_to_messages(messages):
     """Append sentiment values to each message in the messages list."""
     global model
@@ -91,13 +98,15 @@ def analyze_chat():
     chat_data = json.load(file)
     append_sentiment_to_messages(chat_data['messages'])
     response_time_score, customer_sentiment_score, agent_sentiment_score, overall_score = calculate_agent_score(chat_data)
+    feedback = get_feedback(chat_data)
 
     analysis_results = {
         'chat_data': chat_data,
         'response_time_score': response_time_score,
         'customer_sentiment_score': customer_sentiment_score,
         'agent_sentiment_score': agent_sentiment_score,
-        'overall_score': overall_score
+        'overall_score': overall_score,
+        'feedback': feedback
     }
 
     return jsonify(analysis_results)

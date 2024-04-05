@@ -87,7 +87,7 @@ const Dashboard = () => {
                 <Card.Body>
                   <Card.Title className="text-center">Feedback</Card.Title>
                   <ul className="feedback-list">
-                    {placeholderFeedback.map((feedback, index) => (
+                    {analysisResults.feedback.split(/[.!?]+/).map((feedback, index) => (
                       <li key={index}>{feedback}</li>
                     ))}
                   </ul>

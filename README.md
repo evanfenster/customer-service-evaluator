@@ -65,7 +65,7 @@ Before running the application, make sure you have the following prerequisites i
 1. Start the backend server:
    ```
    cd backend
-   flask run
+   python app.py
    ```
 
 2. In a separate terminal, start the frontend development server:
@@ -78,7 +78,7 @@ Before running the application, make sure you have the following prerequisites i
 
 ## Chat Log Format
 
-The chat log files should be in JSON format and follow a specific structure. Here's an example of what a chat log file should look like:
+The chat log files should be in JSON format and follow a specific structure. Examples can be found in the `example_chats` folder. The file without sentiment will call the API to discover it on its own; the one with sentiment has it already filled in. Here's an example of what an input chat log file should look like:
 
 ```json
 {
@@ -131,8 +131,6 @@ The chat log file should have the following fields:
   - `tags` (array): An array of tags or labels associated with the chat session.
 
 Ensure that your chat log files adhere to this format for proper analysis and visualization in the dashboard.
-
-...
 
 ## Usage
 
