@@ -7,25 +7,31 @@ import ChatView from './ChatView';
 import ChatInfo from './ChatInfo';
 import { placeholderFeedback } from './Feedback';
 import './Dashboard.css';
+import LoadingScreen from './LoadingScreen';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Dashboard = () => {
   const [analysisResults, setAnalysisResults] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFileUpload = async (file) => {
     try {
+      setIsLoading(true);
+  
       const formData = new FormData();
       formData.append('file', file, file.name);
-
+  
       const response = await axios.post('http://localhost:5000/analyze', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-
+  
       setAnalysisResults(response.data);
     } catch (error) {
       console.error('Error uploading file:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -38,7 +44,7 @@ const Dashboard = () => {
   };
 
   return (
-    <Container fluid className="dashboard d-flex flex-column vh-100">
+    <Container fluid className="dashboard d-flex flex-column">
       <Row className="flex-grow-1">
         <Col md={4} lg={3} className="sidebar">
           <h1 className="text-center mb-4">Customer Service Evaluator</h1>
@@ -46,21 +52,13 @@ const Dashboard = () => {
           {analysisResults && (
             <>
               <ChatInfo chatData={analysisResults.chat_data} />
-              <Card className="mt-4">
-                <Card.Body>
-                  <Card.Title>Feedback</Card.Title>
-                  <ul className="feedback-list">
-                    {placeholderFeedback.map((feedback, index) => (
-                      <li key={index}>{feedback}</li>
-                    ))}
-                  </ul>
-                </Card.Body>
-              </Card>
             </>
           )}
         </Col>
         <Col md={8} lg={9} className="main-content">
-          {analysisResults && (
+          {isLoading ? (
+            <LoadingScreen />
+          ) : analysisResults ? (
             <>
               <Card className="mb-4">
                 <Card.Body>
@@ -85,6 +83,16 @@ const Dashboard = () => {
                   </Row>
                 </Card.Body>
               </Card>
+              <Card className="mt-4">
+                <Card.Body>
+                  <Card.Title className="text-center">Feedback</Card.Title>
+                  <ul className="feedback-list">
+                    {placeholderFeedback.map((feedback, index) => (
+                      <li key={index}>{feedback}</li>
+                    ))}
+                  </ul>
+                </Card.Body>
+              </Card>
               <Row>
                 <Col>
                   <ChatView messages={analysisResults.chat_data.messages} />
@@ -101,6 +109,10 @@ const Dashboard = () => {
                 </Col>
               </Row>
             </>
+          ) : (
+            <div className="text-center mt-5">
+              <p>Please upload a chat log file to begin the analysis.</p>
+            </div>
           )}
         </Col>
       </Row>

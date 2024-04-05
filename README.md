@@ -12,6 +12,8 @@ This project is a web-based dashboard for analyzing customer service chat logs a
 - Interactive sentiment scores chart
 - Responsive and user-friendly UI
 
+![UI](homepage.png)
+
 ## Prerequisites
 
 Before running the application, make sure you have the following prerequisites installed:
@@ -136,7 +138,7 @@ Ensure that your chat log files adhere to this format for proper analysis and vi
 
 1. Prepare your chat log files in the JSON format described above.
 2. Click on the "Choose File" button to select a chat log file.
-3. Once the file is uploaded, the dashboard will display the analysis results.
+3. Once the file is uploaded, the dashboard will display the analysis results (this may take a few seconds for the sentiment to be analyzed first).
 4. Explore the chat history, sentiment scores, and feedback sections to gain insights into the customer service interactions.
 5. Use the sentiment scores chart to visualize the sentiment trends over time.
 6. Customize the dashboard by modifying the code and CSS files to suit your specific requirements.

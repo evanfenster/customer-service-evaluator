@@ -16,9 +16,13 @@ const ChatInfo = ({ chatData }) => {
           <Col>
             <strong>Session ID:</strong> {chatData.session_id}
           </Col>
+        </Row>
+        <Row>
           <Col>
             <strong>Agent ID:</strong> {chatData.agent_id}
           </Col>
+        </Row>
+        <Row>
           <Col>
             <strong>Channel:</strong> {chatData.channel}
           </Col>
@@ -27,9 +31,13 @@ const ChatInfo = ({ chatData }) => {
           <Col>
             <strong>Start Time:</strong> {chatData.start_time}
           </Col>
+        </Row>
+        <Row>
           <Col>
             <strong>End Time:</strong> {chatData.end_time}
           </Col>
+        </Row>
+        <Row>
           <Col>
             <strong>Duration:</strong> {calculateDuration(chatData.start_time, chatData.end_time)}
           </Col>
@@ -38,6 +46,8 @@ const ChatInfo = ({ chatData }) => {
           <Col>
             <strong>Rating:</strong> {chatData.session_metadata?.rating || 'N/A'}
           </Col>
+        </Row>
+        <Row>
           <Col>
             <strong>Tags:</strong> {chatData.session_metadata?.tags?.join(', ') || 'N/A'}
           </Col>

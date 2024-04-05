@@ -36,6 +36,8 @@ def get_sentiment(text):
     prompt = "Classify the sentiment of the following text as 'positive', 'negative', or 'neutral':\n\n" + text
     response = model.generate_content(prompt, generation_config=config, safety_settings=safety_config)
     result = response.text.strip().lower()
+    if result not in ['positive', 'negative', 'neutral']:
+        result = 'neutral'
     return result
 
 def append_sentiment_to_messages(messages):

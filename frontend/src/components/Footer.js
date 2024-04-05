@@ -3,9 +3,9 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer>
-      Created by Evan Fenster
-    </footer>
+    <div class="footer">
+      Created by Evan Fenster [evanfen@hotmail.com]
+    </div>
   );
 };
 

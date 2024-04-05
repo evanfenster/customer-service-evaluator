@@ -1,5 +1,4 @@
 /* App.css */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 :root {
   --primary-color: #ffffff;
@@ -21,12 +20,9 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  color: var(--text-color);
-  background: linear-gradient(135deg, #000000, #000428, #004e92);
+  background: linear-gradient(135deg, #a8c0ff, #3f2b96, #a8c0ff, #f8f9fd);
   background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
-  line-height: 1.6;
+  animation: gradientAnimation 20s ease infinite;
 }
 
 .app {
@@ -37,35 +33,22 @@ body {
 
 main {
   flex: 1;
-  padding: 2rem 0;
-}
-
-h1, h2, h3, h4 {
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-p {
-  margin-bottom: 1rem;
+  padding: 2rem;
 }
 
 .card {
   background-color: var(--primary-color);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
   padding: 1rem;
-  margin: 1rem 0;
+  margin: .5rem 0;
   max-width: 100%;
-}
-
-.card-body {
-  padding: 1rem;
 }
 
 .card-title {
   font-size: 1.25rem;
   font-weight: 500;
+  padding-bottom: 0.5rem;
 }
 
 .card-text {
@@ -86,8 +69,4 @@ p {
 
 .text-center {
   text-align: center;
-}
-
-.mb-4 {
-  margin-bottom: 1.5rem;
 }
