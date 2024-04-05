@@ -5,3 +5,4 @@ load_creds.py
 model_creator.ipynb
 sentiment_analysis.csv
 /archive
+token.json

@@ -1,4 +1,4 @@
-# Customer Service Chat Analysis Dashboard
+# Customer Service Evaluator - For Humans and AI Chatbots
 
 This project is a web-based dashboard for analyzing customer service chat logs and providing insights into agent performance and sentiment analysis. The dashboard allows users to upload chat log files, processes them using natural language processing techniques, and displays the results in an interactive and visually appealing manner.
 
@@ -25,7 +25,7 @@ Before running the application, make sure you have the following prerequisites i
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/customer-service-chat-analysis.git
+   git clone https://github.com/evanfenster/google-hackathon.git
    ```
 
 2. Navigate to the project directory:
@@ -98,8 +98,7 @@ The chat log files should be in JSON format and follow a specific structure. Her
       "timestamp": "2024-04-02T15:01:30Z",
       "sender": "agent",
       "text": "I'm sorry to hear that. Could you describe the issues you're facing?"
-    },
-    ...
+    }
   ],
   "session_metadata": {
     "rating": 5,
