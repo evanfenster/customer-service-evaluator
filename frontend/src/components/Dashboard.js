@@ -5,7 +5,7 @@ import FileUpload from './FileUpload';
 import SentimentChart from './SentimentChart';
 import ChatView from './ChatView';
 import ChatInfo from './ChatInfo';
-import { placeholderFeedback } from './Feedback';
+import Feedback from './Feedback';
 import './Dashboard.css';
 import LoadingScreen from './LoadingScreen';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -86,11 +86,7 @@ const Dashboard = () => {
               <Card className="mt-4">
                 <Card.Body>
                   <Card.Title className="text-center">Feedback</Card.Title>
-                  <ul className="feedback-list">
-                    {analysisResults.feedback.split(/[.!?]+/).map((feedback, index) => (
-                      <li key={index}>{feedback}</li>
-                    ))}
-                  </ul>
+                    <Feedback feedback={analysisResults.feedback} />
                 </Card.Body>
               </Card>
               <Row>

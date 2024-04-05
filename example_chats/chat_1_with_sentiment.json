@@ -15,10 +15,9 @@
         },
         {
             "message_id": "2",
-            "timestamp": "2024-04-02T15:01:30Z",
+            "timestamp": "2024-04-02T15:01:25Z",
             "sender": "agent",
-            "text": "I'm sorry to hear that. Could you describe the issues you're facing?",
-            "sentiment": "neutral"
+            "text": "I'm sorry to hear that. Could you describe the issues you're facing?"
         },
         {
             "message_id": "3",
@@ -29,10 +28,9 @@
         },
         {
             "message_id": "4",
-            "timestamp": "2024-04-02T15:03:00Z",
+            "timestamp": "2024-04-02T15:02:20Z",
             "sender": "agent",
-            "text": "Got it. Let me check your account details.",
-            "sentiment": "neutral"
+            "text": "Got it. Let me check your account details."
         },
         {
             "message_id": "5",
@@ -50,10 +48,9 @@
         },
         {
             "message_id": "7",
-            "timestamp": "2024-04-02T15:12:00Z",
+            "timestamp": "2024-04-02T15:11:34Z",
             "sender": "agent",
-            "text": "I see. Let me run a diagnostic test on your connection.",
-            "sentiment": "neutral"
+            "text": "I see. Let me run a diagnostic test on your connection."
         },
         {
             "message_id": "8",

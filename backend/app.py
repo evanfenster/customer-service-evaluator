@@ -40,10 +40,12 @@ def get_sentiment(text):
         result = 'neutral'
     return result
 
-def get_feedback(chat):
+def get_feedback(chat, score):
     """Get the feedback from the chat log and return it."""
     global config, safety_config, model
-    prompt = "You are the head of a customer service department and you have received the following chat log. Please provide feedback on the agent's performance and the overall customer experience. Output your feedback in markdown format. Don't include titles or headers.\n\n" + json.dumps(chat, indent=2)
+    prompt = """You are the head of a customer service department and you have received the following chat log. 
+    Please provide feedback on the agent's performance; notes should be detailed and useful for the agent to improve their performance in the future. 
+    Output your feedback in markdown format. Don't include titles or headers.\n\n""" + json.dumps(chat, indent=2)
     response = model.generate_content(prompt, generation_config=config, safety_settings=safety_config)
     return response.text.strip()
 
@@ -58,14 +60,15 @@ def append_sentiment_to_messages(messages):
 def calculate_agent_score(chat):
     """Calculate the agent's performance score."""
     # Calculate the response time score
-    ideal_response_time = 60  # 1 minute in seconds
+    ideal_response_time = 60 # in seconds
     response_times = []
     for i in range(1, len(chat['messages'])):
         if chat['messages'][i]['sender'] == 'agent' and chat['messages'][i - 1]['sender'] == 'customer':
             response_time = datetime.datetime.fromisoformat(chat['messages'][i]['timestamp'].replace("Z", "+00:00")) - datetime.datetime.fromisoformat(chat['messages'][i - 1]['timestamp'].replace("Z", "+00:00"))
             response_times.append(response_time.total_seconds())
-    response_time_score = np.mean([1 if response_time <= ideal_response_time else -1 for response_time in response_times])
-
+            print(response_time.total_seconds())
+    response_time_score = max(1 - (np.mean(response_times) / ideal_response_time), 0)
+    
     # Calculate the sentiment score of the customer, which should weight later responses heavier
     customer_sentiments = [message['sentiment'] for message in chat['messages'] if message['sender'] == 'customer']
     num_cust_messages = len(customer_sentiments)
@@ -73,12 +76,12 @@ def calculate_agent_score(chat):
     for i in range(1, num_cust_messages):
         sentiment = customer_sentiments[i]
         weight = i / num_cust_messages
-        customer_sentiment_score += (1 if sentiment == 'positive' else -.5 if sentiment == 'negative' else 0) * weight
+        customer_sentiment_score += (1 if sentiment == 'positive' else 0 if sentiment == 'negative' else .5) * weight
     customer_sentiment_score /= (0.5* num_cust_messages)
 
     # Calculate the sentiment score of the agent
     agent_sentiments = [message['sentiment'] for message in chat['messages'] if message['sender'] == 'agent']
-    agent_sentiment_score = np.mean([1 if sentiment == 'positive' else -1 if sentiment == 'negative' else .5 for sentiment in agent_sentiments])
+    agent_sentiment_score = np.mean([1 if sentiment == 'positive' else 0 if sentiment == 'negative' else .5 for sentiment in agent_sentiments])
 
     # Calculate the overall score
     overall_score = (response_time_score * 2.5) + (customer_sentiment_score * 5) + (agent_sentiment_score * 2.5)
@@ -98,7 +101,7 @@ def analyze_chat():
     chat_data = json.load(file)
     append_sentiment_to_messages(chat_data['messages'])
     response_time_score, customer_sentiment_score, agent_sentiment_score, overall_score = calculate_agent_score(chat_data)
-    feedback = get_feedback(chat_data)
+    feedback = get_feedback(chat_data, overall_score)
 
     analysis_results = {
         'chat_data': chat_data,
