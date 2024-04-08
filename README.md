@@ -27,12 +27,12 @@ Before running the application, make sure you have the following prerequisites i
 
 1. Clone the repository:
    ```
-   git clone https://github.com/evanfenster/google-hackathon.git
+   git clone https://github.com/evanfenster/customer-service-evaluator.git
    ```
 
 2. Navigate to the project directory:
    ```
-   cd customer-service-chat-analysis
+   cd customer-service-evaluator
    ```
 
 3. Install the frontend dependencies:
@@ -59,6 +59,7 @@ Before running the application, make sure you have the following prerequisites i
      API_KEY=your-api-key
      ```
    - Replace `your-api-key` with the actual API key you obtained.
+   - Create a `token.json` file in the `backend` folder if necessary (uncomment the `load_creds` on line 102 of `app.py` if needed).
 
 ## Running the Application
 

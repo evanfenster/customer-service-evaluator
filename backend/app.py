@@ -5,6 +5,7 @@ import numpy as np
 import datetime
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from load_creds import load_creds
 
 config = None
 safety_config = None
@@ -97,6 +98,9 @@ def calculate_agent_score(chat):
 @app.route('/analyze', methods=['POST'])
 def analyze_chat():
     """Analyze a chat log and return the analysis results."""
+
+    #load_creds()
+
     file = request.files['file']
     chat_data = json.load(file)
     append_sentiment_to_messages(chat_data['messages'])

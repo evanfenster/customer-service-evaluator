@@ -1,7 +1,6 @@
 .env
 /venv
 client_secret.json
-load_creds.py
 model_creator.ipynb
 sentiment_analysis.csv
 /archive
